@@ -12,11 +12,11 @@
 
 Firstly, we suggest to build a new virtual environment through `Anaconda`:
 ```
-conda create -n FFM python=3.7
+conda create -n FFMC python=3.7
 ```
-Create and activate the virtual environment environment `FFM`:
+Create and activate the virtual environment environment `FFMC`:
 ```
-conda activate FFM
+conda activate FFMC
 ```
 ### Package
 
