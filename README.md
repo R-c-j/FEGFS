@@ -3,6 +3,7 @@
 ## Table of contents
 * [Install](#Install)
 	* [Install using `pip`](#Install)
+	* [package](#package)
 * [Usage](#Usage)
 	* [example](#example)
 	* [real data](#example) 
@@ -17,6 +18,13 @@ Create and activate the virtual environment environment `FFM`:
 ```
 conda activate FFM
 ```
+### package
+
+package | version
+---- | -----
+pandas | 0.25.1
+numpy | 1.16.5
+scikit-learn | 0.21.3
 
 ## Usage
 All functions of FFM can be found in the script folder `FFMC.py` Is running:
@@ -26,7 +34,7 @@ python FFMC.py -d <data_name> -c <num_clusters> -n <retention_ratio> -i <GO_Term
 ### example
 Run `FFMC` as an example in script:
 ```
-python FFMC.py -d test -c 5 -n 0.4 -i ./example/GO_Term.xlsx -e ./example/test_count_matrix.csv -o .example/Term_matrix -l ./example/test_label.csv
+python FFMC.py -d test -c 5 -n 0.4 -i ./example/GO_Term.xlsx -e ./example/test_count_matrix.csv -o ./example/Term_matrix -l ./example/test_label.csv
 ```
 ### real data
 Here we take `Pollen` as an example:
