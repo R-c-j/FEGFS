@@ -1,7 +1,7 @@
 ## Article title
 
 ## Table of contents
-* Install
+* Install (## Install)
 	* Install using `pip`
 * Usage
 	* example
@@ -23,11 +23,14 @@ All functions of FFM can be found in the script folder `FFMC.py` Is running:
 ```
 python FFMC.py -d <data_name> -c <num_clusters> -n <retention_ratio> -i <GO_Term_path> -e　<expression_matrix_path> -o <outputpath> -l <label_path>
 ```
-### test
+### example
 Run `FFMC` as an example in script:
 ```
 python FFMC.py -d test -c 5 -n 0.4 -i ./example/GO_Term.xlsx -e ./example/test_count_matrix.csv -o .example/Term_matrix -l ./example/test_label.csv
 ```
-
-
+### example
+Here we take `Pollen` as an example:
+```
+python FFMC.py -d test -c 5 -n 0.4 -i ./example/GO_Term.xlsx -e ./example/test_count_matrix.csv -o .example/Term_matrix -l ./example/test_label.csv
+```
 
