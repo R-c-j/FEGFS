@@ -31,6 +31,6 @@ python FFMC.py -d test -c 5 -n 0.4 -i ./example/GO_Term.xlsx -e ./example/test_c
 ### real data
 Here we take `Pollen` as an example:
 ```
-python FFMC.py -d test -c 5 -n 0.4 -i ./example/GO_Term.xlsx -e ./example/test_count_matrix.csv -o .example/Term_matrix -l ./example/test_label.csv
+python FFMC.py -d pollen -c 11 -n 0.4 -i ./pollen/pollen_GO_Term.xlsx -e ./pollen/pollen_count_matrix.csv -o ./pollen/pollen_Term_matrix -l ./pollen/pollen_label.csv
 ```
 
