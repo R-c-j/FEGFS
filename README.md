@@ -4,10 +4,12 @@
 * Install
 	* Install using `pip`
 * Usage
-	
+	* example
+	* real data
 ## Install
 ### Install using `pip`
-Firstly, we suggest to build a new virtual environment through `Anaconda`: 
+
+Firstly, we suggest to build a new virtual environment through `Anaconda`:
 ```
 conda create -n FFM python=3.7
 ```
@@ -17,10 +19,15 @@ conda activate FFM
 ```
 
 ## Usage
-
-
-
-
+All functions of FFM can be found in the script folder `FFMC.py` Is running:
+```
+python FFMC.py -d <data_name> -c <num_clusters> -n <retention_ratio> -i <GO_Term_path> -e　<expression_matrix_path> -o <outputpath> -l <label_path>
+```
+### test
+Run `FFMC` as an example in script:
+```
+python FFMC.py -d test -c 5 -n 0.4 -i ./example/GO_Term.xlsx -e ./example/test_count_matrix.csv -o .example/Term_matrix -l ./example/test_label.csv
+```
 
 
 
