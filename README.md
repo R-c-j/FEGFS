@@ -3,10 +3,10 @@
 ## Table of contents
 * [Install](#Install)
 	* [Install using `pip`](#Install)
-	* [package](#package)
+	* [package](#Package)
 * [Usage](#Usage)
-	* [example](#example)
-	* [real data](#example) 
+	* [Example](#Example)
+	* [Real data](#Example) 
 ## Install
 ### Install using `pip`
 
@@ -18,7 +18,7 @@ Create and activate the virtual environment environment `FFM`:
 ```
 conda activate FFM
 ```
-### package
+### Package
 
 package | version
 ---- | -----
@@ -32,12 +32,12 @@ All functions of FFM can be found in the script folder `FFMC.py` Is running:
 ```
 python FFMC.py -d <data_name> -c <num_clusters> -n <retention_ratio> -i <GO_Term_path> -e　<expression_matrix_path> -o <outputpath> -l <label_path>
 ```
-### example
+### Example
 Run `FFMC` as an example in script:
 ```
 python FFMC.py -d test -c 5 -n 0.4 -i ./example/GO_Term.xlsx -e ./example/test_count_matrix.csv -o ./example/Term_matrix -l ./example/test_label.csv
 ```
-### real data
+### Real data
 Here we take `Pollen` as an example:
 ```
 python FFMC.py -d pollen -c 11 -n 0.4 -i ./pollen/pollen_GO_Term.xlsx -e ./pollen/pollen_count_matrix.csv -o ./pollen/pollen_Term_matrix -l ./pollen/pollen_label.csv
