@@ -2,10 +2,10 @@
 
 ## Table of contents
 * [Install](#Install)
-	* Install using `pip`
-* Usage
-	* example
-	* real data
+	* [Install using `pip`](#Install using `pip`)
+* [Usage](#Usage)
+	* [example](#example)
+	* [real data](#real data)
 ## Install
 ### Install using `pip`
 
@@ -28,7 +28,7 @@ Run `FFMC` as an example in script:
 ```
 python FFMC.py -d test -c 5 -n 0.4 -i ./example/GO_Term.xlsx -e ./example/test_count_matrix.csv -o .example/Term_matrix -l ./example/test_label.csv
 ```
-### example
+### real data
 Here we take `Pollen` as an example:
 ```
 python FFMC.py -d test -c 5 -n 0.4 -i ./example/GO_Term.xlsx -e ./example/test_count_matrix.csv -o .example/Term_matrix -l ./example/test_label.csv
