@@ -20,12 +20,12 @@ conda activate FFM
 ```
 ### Package
 
-package | version
----- | -----
-pandas | 0.25.1
-numpy | 1.16.5
-scikit-learn | 0.21.3
-matplotlib | 3.3.1
+| package | version |
+| ---- | ---- |
+| pandas | 0.25.1 |
+| numpy | 1.16.5 |
+| scikit-learn | 0.21.3 |
+| matplotlib | 3.3.1 |
 
 ## Usage
 All functions of FFM can be found in the script folder `FFMC.py` Is running:
