@@ -1,7 +1,7 @@
 ## Article title
 
 ## Table of contents
-* Install 
+* [Install](#Install)
 	* Install using `pip`
 * Usage
 	* example
