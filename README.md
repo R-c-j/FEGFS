@@ -2,10 +2,10 @@
 
 ## Table of contents
 * [Install](#Install)
-	* [Install using `pip`](#Install)
+	* [Install using `pip`](#Install using pip)
 * [Usage](#Usage)
 	* [example](#example)
-	* [real data](#realdata)
+	* [real data](#real data) 
 ## Install
 ### Install using `pip`
 
