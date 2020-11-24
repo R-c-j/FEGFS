@@ -14,7 +14,6 @@ import time
 
 def clustering(n_clusters,read_path,label_path):
 
-
     n_clusters = n_clusters
     raw_data=pd.read_csv(read_path,header=None)
     y_true = pd.read_csv(label_path,header=None)
@@ -24,26 +23,16 @@ def clustering(n_clusters,read_path,label_path):
     y_true = np.array(y_true)
     y_true = y_true.flatten()
     iteration = 5
-
+    
     model_kmeans = KMeans(n_clusters=n_clusters,random_state=100,max_iter=iteration)
 
     Agglomerativeclustering = AgglomerativeClustering(affinity='euclidean', compute_full_tree='auto',
                         connectivity=None, linkage='ward', memory=None, n_clusters=n_clusters)
-    Birchclustering = Birch(n_clusters=n_clusters)
-
-    DBSCANclustering = DBSCAN(eps=0.8,min_samples=n_clusters)
-
-    covariance = ['full','tied','diag','spherical']
-    Gaussianmixture = GaussianMixture(n_components=n_clusters,covariance_type=covariance[3])
-
+    
     y_pre = model_kmeans.fit_predict(raw_data)
     y_Agg_pre = Agglomerativeclustering.fit_predict(raw_data)
-    y_Birch_pre = Birchclustering.fit_predict(raw_data)
-    y_DBSCAM_pre = DBSCANclustering.fit_predict(raw_data)
-    y_Gaussian_pre = Gaussianmixture.fit_predict(raw_data)
     r1 = pd.Series(model_kmeans.labels_).value_counts()
     r2 = pd.DataFrame(model_kmeans.cluster_centers_)
-
     r = pd.concat([r2, r1], axis = 1)
     r.columns = list(raw_data.columns) + [u'Number of class']
     r = pd.concat([raw_data, pd.Series(model_kmeans.labels_, index = raw_data.index)], axis = 1)
@@ -60,38 +49,16 @@ def clustering(n_clusters,read_path,label_path):
     Agg_HOM = metrics.homogeneity_score(y_true,y_Agg_pre)
     Agg_COM = metrics.completeness_score(y_true,y_Agg_pre)
 
-    Birch_ARI = metrics.adjusted_rand_score(y_true,y_Birch_pre)
-    Birch_NMI = metrics.adjusted_mutual_info_score(y_true,y_Birch_pre,average_method='arithmetic')
-    Birch_HOM = metrics.homogeneity_score(y_true,y_Birch_pre)
-    Birch_COM = metrics.completeness_score(y_true,y_Birch_pre)
 
-    DBSCAN_ARI = metrics.adjusted_rand_score(y_true,y_DBSCAM_pre)
-    DBSCAN_NMI = metrics.adjusted_mutual_info_score(y_true,y_DBSCAM_pre,average_method='arithmetic')
-    DBSCAN_HOM = metrics.homogeneity_score(y_true,y_DBSCAM_pre)
-    DBSCAN_COM = metrics.completeness_score(y_true,y_DBSCAM_pre)
-
-    Gaussian_ARI = metrics.adjusted_rand_score(y_true,y_Gaussian_pre)
-    Gaussian_NMI = metrics.adjusted_mutual_info_score(y_true,y_Gaussian_pre,average_method='arithmetic')
-    Gaussian_HOM = metrics.homogeneity_score(y_true,y_Gaussian_pre)
-    Gaussian_COM = metrics.completeness_score(y_true,y_Gaussian_pre)
-
-    print("KMeans_ARI=%.4f" % KMeans_ARI)
-    print("KMeans_NMI=%.4f" % KMeans_NMI)
-    print("KMeans_HOM=%.4f" % KMeans_HOM)
-    print("KMeans_COM=%.4f" % KMeans_COM)
+#     print("KMeans_ARI=%.4f" % KMeans_ARI)
+#     print("KMeans_NMI=%.4f" % KMeans_NMI)
+#     print("KMeans_HOM=%.4f" % KMeans_HOM)
+#     print("KMeans_COM=%.4f" % KMeans_COM)
 
     print("Agg_ARI=%.4f" % Agg_ARI)
     print("Agg_NMI=%.4f" % Agg_NMI)
     print("Agg_HOM=%.4f" % Agg_HOM)
     print("Agg_COM=%.4f" % Agg_COM)
     print('+'*10)
-    print("%.4f" % KMeans_ARI)
-    print("%.4f" % KMeans_NMI)
-    print("%.4f" % KMeans_HOM)
-    print("%.4f" % KMeans_COM)
-    print( )
-    print("%.4f" % Agg_ARI)
-    print("%.4f" % Agg_NMI)
-    print("%.4f" % Agg_HOM)
-    print("%.4f" % Agg_COM)
+
 
