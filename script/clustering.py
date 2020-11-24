@@ -1,15 +1,8 @@
 import numpy as np
 import pandas as pd
 from sklearn.cluster import AgglomerativeClustering
-from sklearn.cluster import SpectralClustering
-from sklearn.mixture import GaussianMixture
-from sklearn.cluster import Birch
-from sklearn.cluster import DBSCAN
 from sklearn.cluster import KMeans
-from sklearn.manifold import TSNE
-import matplotlib.pyplot as plt
 from sklearn import metrics
-from config import config
 import time
 
 def clustering(n_clusters,read_path,label_path):
@@ -23,12 +16,10 @@ def clustering(n_clusters,read_path,label_path):
     y_true = np.array(y_true)
     y_true = y_true.flatten()
     iteration = 5
-    
-    model_kmeans = KMeans(n_clusters=n_clusters,random_state=100,max_iter=iteration)
 
+    model_kmeans = KMeans(n_clusters=n_clusters,random_state=100,max_iter=iteration)
     Agglomerativeclustering = AgglomerativeClustering(affinity='euclidean', compute_full_tree='auto',
                         connectivity=None, linkage='ward', memory=None, n_clusters=n_clusters)
-    
     y_pre = model_kmeans.fit_predict(raw_data)
     y_Agg_pre = Agglomerativeclustering.fit_predict(raw_data)
     r1 = pd.Series(model_kmeans.labels_).value_counts()
@@ -49,16 +40,13 @@ def clustering(n_clusters,read_path,label_path):
     Agg_HOM = metrics.homogeneity_score(y_true,y_Agg_pre)
     Agg_COM = metrics.completeness_score(y_true,y_Agg_pre)
 
+    # print("KMeans_ARI=%.4f" % KMeans_ARI)
+    # print("KMeans_NMI=%.4f" % KMeans_NMI)
+    # print("KMeans_HOM=%.4f" % KMeans_HOM)
+    # print("KMeans_COM=%.4f" % KMeans_COM)
 
-#     print("KMeans_ARI=%.4f" % KMeans_ARI)
-#     print("KMeans_NMI=%.4f" % KMeans_NMI)
-#     print("KMeans_HOM=%.4f" % KMeans_HOM)
-#     print("KMeans_COM=%.4f" % KMeans_COM)
-
-    print("Agg_ARI=%.4f" % Agg_ARI)
-    print("Agg_NMI=%.4f" % Agg_NMI)
-    print("Agg_HOM=%.4f" % Agg_HOM)
-    print("Agg_COM=%.4f" % Agg_COM)
+    print("ARI=%.4f" % Agg_ARI)
+    print("NMI=%.4f" % Agg_NMI)
+    print("HOM=%.4f" % Agg_HOM)
+    print("COM=%.4f" % Agg_COM)
     print('+'*10)
-
-
