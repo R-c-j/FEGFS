@@ -182,26 +182,3 @@ def screen_Term_gene_1(GO_Term,Save_path):
     return Term_gene_dealing_1.to_csv(
         str(Save_path), sep=',',
         index=False, header=True)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
