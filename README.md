@@ -28,7 +28,7 @@ conda activate FFMC
 | matplotlib | 3.3.1 |
 
 ## Usage
-All functions of FFM can be found in the script folder `FFMC.py` Is running:
+All functions of FFM can be found in the script folder `FFMC.py` is running:
 ```
 python ./script/FFMC.py -d <data_name> -c <num_clusters> -n <retention_ratio> -i <GO_Term_path> -e　<expression_matrix_path> -o <outputpath> -l <label_path>
 ```
