@@ -12,11 +12,11 @@
 
 Firstly, we suggest to build a new virtual environment through `Anaconda`:
 ```
-conda create -n FFMC python=3.7
+conda create -n scBGFF python=3.7
 ```
-Create and activate the virtual environment environment `FFMC`:
+Create and activate the virtual environment environment `scBGFF`:
 ```
-conda activate FFMC
+conda activate scBGFF
 ```
 ### Package
 
@@ -28,18 +28,18 @@ conda activate FFMC
 | matplotlib | 3.3.1 |
 
 ## Usage
-All functions of FFM can be found in the script folder `FFMC.py` is running:
+All functions of FFM can be found in the script folder `scBGFF.py` is running:
 ```
-python ./script/FFMC.py -d <data_name> -c <num_clusters> -n <retention_ratio> -i <GO_Term_path> -e　<expression_matrix_path> -o <outputpath> -l <label_path>
+python ./script/scBGFF.py -d <data_name> -c <num_clusters> -n <retention_ratio> -i <GO_Term_path> -e　<expression_matrix_path> -o <outputpath> -l <label_path>
 ```
 ### Example
-Run `FFMC` as an example in script:
+Run `scBGFF` as an example in script:
 ```
-python ./script/FFMC.py -d test -c 5 -n 0.4 -i ./example/GO_Term.xlsx -e ./example/test_count_matrix.csv -o ./example/Term_matrix -l ./example/test_label.csv
+python ./script/scBGFF.py -d test -c 5 -n 0.4 -i ./example/GO_Term.xlsx -e ./example/test_count_matrix.csv -o ./example/Term_matrix -l ./example/test_label.csv
 ```
 ### Real data
 Here we take `Pollen` as an example:
 ```
-python ./script/FFMC.py -d pollen -c 11 -n 0.4 -i ./pollen/pollen_GO_Term.xlsx -e ./pollen/pollen_count_matrix.csv -o ./pollen/pollen_Term_matrix -l ./pollen/pollen_label.csv
+python ./script/scBGFF.py -d pollen -c 11 -n 0.4 -i ./pollen/pollen_GO_Term.xlsx -e ./pollen/pollen_count_matrix.csv -o ./pollen/pollen_Term_matrix -l ./pollen/pollen_label.csv
 ```
 
