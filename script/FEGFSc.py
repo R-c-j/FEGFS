@@ -8,7 +8,7 @@ import argparse
 import os
 import time
 
-parser = argparse.ArgumentParser(description="Implementation of FFM")
+parser = argparse.ArgumentParser(description="Implementation of FEGFS")
 parser.add_argument('-d','--data_name',dest='data_name',type=str)
 parser.add_argument('-c','--n_clusters',dest='n_clusters',type=int)
 parser.add_argument('-n','--n_components',dest='n_components',type=float,default=0.4)
